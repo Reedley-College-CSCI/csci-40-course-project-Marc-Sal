@@ -19,7 +19,7 @@ area such as price range or publishing company.
 
 #include <iostream>
 #include <string>
-#include <fstram>
+#include <fstream>
 
 using namespace std;
 
@@ -47,7 +47,7 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         getline(file, array[count].author) &&
         getline(file, array[count].publisher) &&
         getline(file, array[count].condition) &&
-        file >> array[count].value) {
+        (file >> array[count].value)) {
         file.ignore();
         count++;
     }
