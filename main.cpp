@@ -42,7 +42,9 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         return 0;
     }
     int count = 0;
-    while(count < size &&)
+    while (count < size&&) {
+
+    }
 }
 // Sort Functions
 //Sorts the array  from lowest value to highest.
