@@ -42,8 +42,11 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         return 0;
     }
     int count = 0;
-    while (count < size&&) {
-
+    while (count < size && file >> array[count].name
+        >> array[count].issue >> array[count].author
+        >> array[count].publisher >> array[count].condition
+        >> array[count].value) {
+        count++;
     }
 }
 // Sort Functions
