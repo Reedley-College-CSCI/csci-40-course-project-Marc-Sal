@@ -19,6 +19,7 @@ area such as price range or publishing company.
 
 #include <iostream>
 #include <string>
+#include <fstram>
 
 using namespace std;
 
@@ -33,6 +34,16 @@ struct ComicBook {
 
 };
 //Functions
+int loadFile(ComicBook array[], string fileName,  int size) {
+    ifstream file(fileName);
+
+    if (!file) {
+        cout << "Unable to open file\n";
+        return 0;
+    }
+    int count = 0;
+    while(count < size &&)
+}
 // Sort Functions
 //Sorts the array  from lowest value to highest.
 void sortLowestValue(ComicBook array[], int size) {
