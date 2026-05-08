@@ -23,6 +23,9 @@ I choose to use structs because I needed to group a lot of variables together so
 obvious the awnser.
 I uses a sorting algorithms when it came to sorting the the list by value and used a searching algorithim
 to find comics in a specific price range.
+- I will ensure that data persists between by using files and storing the data there.
+- I was initially planning on using classes instead of a struct due to the many functions but decided to instead
+to use structs as it wsas easier to use and I had more experience with it.
 ---
 
 ## 3. Testing Summary
