@@ -66,7 +66,7 @@ void sortLowestValue(ComicBook array[], int size) {
             }
         }
 
-        swap(array[lowestVal], array[i]);
+        swap(array[lowestLocation], array[i]);
 
     }
 }
@@ -85,7 +85,7 @@ void sortHighestValue(ComicBook array[], int size) {
             }
         }
 
-        swap(array[highestVal], array[i]);
+        swap(array[highestLocation], array[i]);
 
     }
 }
