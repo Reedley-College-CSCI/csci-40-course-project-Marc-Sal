@@ -4,6 +4,10 @@
 ## 1. Overview
 - What problem does your project solve?  
 - Briefly describe the purpose and key features of your program.  
+My project will solve the problem of comic book collectors not being able to keep track 
+of their invetory. It will keep the comics in a clean array. The user will be able to sort
+the comics in by a lot of factors such as value. The user will also be able to remove and add 
+comics.
 
 ---
 
@@ -13,7 +17,12 @@
 - How did you implement searching and sorting? What algorithms did you use and why?  
 - How do you ensure data persistence between program runs?  
 - Did you consider alternative approaches? If so, why did you not use them?  
-
+I used constructs as my main source of keeping track of the comics. It will use strings and a double
+to keep track of it value and the many other factors such as the name and publisher to name a few.
+I choose to use structs because I needed to group a lot of variables together so a strcut was the 
+obvious the awnser.
+I uses a sorting algorithms when it came to sorting the the list by value and used a searching algorithim
+to find comics in a specific price range.
 ---
 
 ## 3. Testing Summary
