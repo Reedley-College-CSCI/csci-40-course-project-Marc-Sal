@@ -1,6 +1,6 @@
 // CSCI-40 Final Project
 // Author: Marcos Saldana
-//Change5
+
 /*
  * Description:
  * Comic Book Tracker: This program  will be keeping track of comics.
@@ -77,15 +77,15 @@ void sortName(ComicBook array[], int size) {
     string highestName;
     int highestLocation;
     for (int i = 0; i < (size - 1); i++) {
-        highestName = toupper(array[i].name);
+        highestName = array[i].name;
         highestLocation = i;
         for (int j = i + 1; j < size; j++) {
-            if (toupper(array[i].name) < highestName) {
+            if (array[j].name < highestName) {
                 highestName = array[j].name;
                 highestLocation = j;
             }
         }
-        swap(array[highestName], array[i]);
+        swap(array[highestLocation], array[i]);
 
     }
 }
@@ -158,10 +158,11 @@ void printComics (ComicBook array[], int size) {
 
 //Print the Value of all comics
 double  totalValue(ComicBook array[], int size) {
-    double sum = 0;
+    double sum = 0.0;
     for (int i = 0; i < size - 1; i++) {
-
+        sum += array[i].value;
     }
+    cout << "The value of all the comics: $" << sum << endl;
 }
 
 
