@@ -48,6 +48,8 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         >> array[count].value) {
         count++;
     }
+    file.closs();
+    return count;
 }
 // Sort Functions
 //Sorts the array  from lowest value to highest.
@@ -181,10 +183,10 @@ double  totalValue(ComicBook array[], int size) {
     cout << "The value of all the comics: $" << sum << endl;
 }
 
-
+const int MAX_SIZE = 10;
 int main() {
     
-    ComicBook comicList[100];
+    ComicBook comicList[MAX_SIZE];
 
 
     return 0;
