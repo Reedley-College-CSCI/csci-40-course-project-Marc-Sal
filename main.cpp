@@ -42,13 +42,16 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         return 0;
     }
     int count = 0;
-    while (count < size && file >> array[count].name
-        >> array[count].issue >> array[count].author
-        >> array[count].publisher >> array[count].condition
-        >> array[count].value) {
+    while (count < size && getline(file, array[count].name)
+        && getline(file, array[count].issue) && 
+        getline(file, array[count].author) &&
+        getline(file, array[count].publisher) &&
+        getline(file, array[count].condition) &&
+        file >> array[count].value) {
+        file.ignore();
         count++;
     }
-    file.closs();
+    file.close();
     return count;
 }
 // Sort Functions
