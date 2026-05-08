@@ -185,8 +185,9 @@ double  totalValue(ComicBook array[], int size) {
 
 const int MAX_SIZE = 10;
 int main() {
-    
+
     ComicBook comicList[MAX_SIZE];
+    loadFile(comicList, "comicBooks", MAX_SIZE);
 
 
     return 0;
