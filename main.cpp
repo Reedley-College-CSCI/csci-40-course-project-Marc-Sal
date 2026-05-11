@@ -190,8 +190,13 @@ const int MAX_SIZE = 10;
 int main() {
 
     ComicBook comicList[MAX_SIZE];
-    loadFile(comicList, "comicBooks", MAX_SIZE);
+    loadFile(comicList, "comicBooks.txt", MAX_SIZE);
 
-
+    //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
+    //searchPublisher(comicList, "DC", MAX_SIZE);
+    //searchComicName(comicList, "Spawn", MAX_SIZE);
+    sortHighestValue(comicList, MAX_SIZE);
+    searchPriceRange(comicList, 100, 200, MAX_SIZE);
+    printComics(comicList, MAX_SIZE);
     return 0;
 }
