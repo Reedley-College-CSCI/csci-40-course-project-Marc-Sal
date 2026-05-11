@@ -63,7 +63,7 @@ void sortLowestValue(ComicBook array[], int size) {
         lowestVal = array[i].value;
         lowestLocation = i;
         for (int j = i + 1; j < size; j++) {
-            if (array[i].value < lowestVal) {
+            if (array[j].value < lowestVal) {
                 lowestVal = array[j].value;
                 lowestLocation = j;
             }
@@ -82,7 +82,7 @@ void sortHighestValue(ComicBook array[], int size) {
         highestVal = array[i].value;
         highestLocation = i;
         for (int j = i + 1; j < size; j++) {
-            if (array[i].value < highestVal) {
+            if (array[j].value > highestVal) {
                 highestVal = array[j].value;
                 highestLocation = j;
             }
@@ -97,7 +97,7 @@ void sortHighestValue(ComicBook array[], int size) {
 void sortName(ComicBook array[], int size) {
     string highestName;
     int highestLocation;
-    for (int i = 0; i < (size - 1); i++) {
+    for (int i = 0; i < (size); i++) {
         highestName = array[i].name;
         highestLocation = i;
         for (int j = i + 1; j < size; j++) {
@@ -114,7 +114,7 @@ void sortName(ComicBook array[], int size) {
 //Sort Functions
 //Searches for comics in a price range
 void searchPriceRange(ComicBook array[], double min, double max, int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < size; i++) {
         if (array[i].value <= max && array[i].value >= min) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 <<" Publisher: " << array[i].publisher << "  Condition: " << array[i].condition 
@@ -125,7 +125,7 @@ void searchPriceRange(ComicBook array[], double min, double max, int size) {
 
 //Searches based on publisher
 void searchAuthor (ComicBook array[], string author, int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < size; i++) {
         if (array[i].author == author) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
@@ -136,7 +136,7 @@ void searchAuthor (ComicBook array[], string author, int size) {
 
 //Searches for specific comics
 void searchComicName(ComicBook array[], string comicName, int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < size; i++) {
         if (array[i].name == comicName) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
@@ -147,7 +147,7 @@ void searchComicName(ComicBook array[], string comicName, int size) {
 
 //Searches for specific publisher
 void searchPublisher(ComicBook array[], string publisher, int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < size; i++) {
         if (array[i].publisher == publisher) {
             cout <<  i + 1 << " Name: "  << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
@@ -157,7 +157,7 @@ void searchPublisher(ComicBook array[], string publisher, int size) {
 }
 
 //Array Editors
-//Removes an item from the array
+//Removes an item from the array **REVIEW THIS ONE****
 void removeComic(ComicBook array[], string comicName, int size) {
     int comicDestroyer;
     searchComicName(array[], comicName, size);
@@ -170,7 +170,7 @@ void removeComic(ComicBook array[], string comicName, int size) {
 //Info Printing
 //Prints out the list of Comics
 void printComics (ComicBook array[], int size) {
-    for (int i = 0; i < (size - 1); i++) {
+    for (int i = 0; i < (size); i++) {
         cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
             << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition 
             << " Value: " << array[i].value << endl;
@@ -180,7 +180,7 @@ void printComics (ComicBook array[], int size) {
 //Print the Value of all comics
 double  totalValue(ComicBook array[], int size) {
     double sum = 0.0;
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < size; i++) {
         sum += array[i].value;
     }
     cout << "The value of all the comics: $" << sum << endl;
