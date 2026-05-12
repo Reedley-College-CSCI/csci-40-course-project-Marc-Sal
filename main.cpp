@@ -159,12 +159,9 @@ void searchPublisher(ComicBook array[], string publisher, int size) {
 //Array Editors
 //Removes an item from the array **REVIEW THIS ONE****
 void removeComic(ComicBook array[], int location, int size) {
-    int comicDestroyer;
-    searchComicName(array[], comicName, size);
-    cout << "Which comic one would you like to remove?\n ";
-    cin >> comicDestroyer;
-    comicDestroyer = comicDestroyer - 1;
-    delete(array[comicDestroyer]);
+    for (int i = location i < size; i++) {
+        array[location] = array[location + 1];
+    }
 }
 
 //Info Printing
@@ -188,9 +185,9 @@ double  totalValue(ComicBook array[], int size) {
 
 const int MAX_SIZE = 10;
 int main() {
-
-    ComicBook comicList[MAX_SIZE];
-    loadFile(comicList, "comicBooks.txt", MAX_SIZE);
+    ComicBook* comics = nullptr;
+    comics = new ComicBook [MAX_SIZE];
+    loadFile(comics, "comicBooks.txt", MAX_SIZE);
 
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
     //searchPublisher(comicList, "DC", MAX_SIZE);
