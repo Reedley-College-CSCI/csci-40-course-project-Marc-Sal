@@ -171,7 +171,43 @@ bool removeComic(ComicBook array[], int location, int& size) {
 
 //Adds a comic if the array isn't already filled up
 bool addComic(ComicBook array[], int maxSize, int& size) {
+    //Variables for new entry
+    string name;
+    string issue;
+    string author;
+    string publisher;
+    string condition;
+    double value;
 
+    //Checks to see if the array is already filled up
+    if (maxSize == size) {
+        cout "Error: List is already filled up\n";
+        return 0;
+    }
+    //Allows for another comic to be entered
+    size++;
+    //Propmts the user to fulfill what the attributes if the comic
+    cout << "What is the name of the comic?\n";
+    cin >> name;
+    cout << "What is the issue of the comic?\n";
+    cin >> issue;
+    cout << "Who is the author of the comic?\n";
+    cin >> author;
+    cout << "Who is the publisher of the comic?\n";
+    cin >> publisher;
+    cout << "What condition is the comic in?\n";
+    cin >> condition;
+    cout << "What is the value of the comic?\n";
+    cin >> value;
+
+    //Inputs the attributes into the array
+    array[size - 1].name = name;
+    array[size - 1].issue = issue;
+    array[size - 1].author = author;
+    array[size - 1].publisher = publisher;
+    array[size - 1].condition = condition;
+    array[size - 1].value = value;
+    return 1;
 }
 //Info Printing
 //Prints out the list of Comics
@@ -195,7 +231,9 @@ double  totalValue(ComicBook array[], int size) {
 
 int main() {
     int size;
+    int maxSize;
     cin >> size;
+    maxSize = size;
     ComicBook* comics = nullptr;
     comics = new ComicBook [size];
     loadFile(comics, "comicBooks.txt", MAX_SIZE);
@@ -207,8 +245,8 @@ int main() {
     //searchPriceRange(comicList, 100, 200, MAX_SIZE);
 
     removeComic(comics, 3 - 1, size);
+    addComic(comics, maxSize, size);
     printComics(comicList, size);
-
 
     return 0;
 }
