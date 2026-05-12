@@ -165,6 +165,7 @@ bool removeComic(ComicBook array[], int location, int& size) {
     }
         swap(array[location], array[size - 1]);
         size--;
+        cout << "Removed the comic\n";
         return 1;
 }
 
