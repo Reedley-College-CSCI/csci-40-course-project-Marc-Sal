@@ -188,15 +188,15 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     size++;
     //Propmts the user to fulfill what the attributes if the comic
     cout << "What is the name of the comic?\n";
-    cin >> name;
+    getline(cin, name);
     cout << "What is the issue of the comic?\n";
-    cin >> issue;
+    getline(cin, issue);
     cout << "Who is the author of the comic?\n";
-    cin >> author;
+    getline(cin, author);
     cout << "Who is the publisher of the comic?\n";
-    cin >> publisher;
+    getline(cin, publisher);
     cout << "What condition is the comic in?\n";
-    cin >> condition;
+    getline(cin, condition);
     cout << "What is the value of the comic?\n";
     cin >> value;
 
