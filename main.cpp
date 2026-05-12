@@ -187,6 +187,7 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     //Allows for another comic to be entered
     size++;
     //Propmts the user to fulfill what the attributes if the comic
+    cin.ignore();
     cout << "What is the name of the comic?\n";
     getline(cin, name);
     cout << "What is the issue of the comic?\n";
