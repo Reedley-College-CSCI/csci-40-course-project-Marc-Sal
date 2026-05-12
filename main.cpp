@@ -30,7 +30,7 @@ struct ComicBook {
     string author;
     string publisher;
     string condition;
-    double value;
+    double value = 0.0;
 
 };
 //Functions
@@ -233,7 +233,23 @@ double  totalValue(ComicBook array[], int size) {
 //Exports data into a new file
 bool exportFile(ComicBook array[], int size) {
     //Export File
-    ofS
+    ofstream outFile("Updated Comics List.txt");
+    //Checks if the file can be opened
+    if (!outFile) {
+        cout << "Unable to open file\n";
+        return 0;
+    }
+    //Loads data into the file
+    for (int i = 0; i < size; i++) {
+        outFile << array[i].name << endl;
+        outFile << array[i].issue << endl;
+        outFile << array[i].author << endl;
+        outFile << array[i].publisher << endl;
+        outFile << array[i].condition << endl;
+        outFile << array[i].value << endl;
+    }
+    outFile.close();
+    return 1;
 }
 
 int main() {
