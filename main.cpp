@@ -158,10 +158,14 @@ void searchPublisher(ComicBook array[], string publisher, int size) {
 
 //Array Editors
 //Removes an item from the array **REVIEW THIS ONE****
-void removeComic(ComicBook array[], int location, int size) {
-    for (int i = location i < size; i++) {
-        array[location] = array[location + 1];
+bool removeComic(ComicBook array[], int location, int& size) {
+    if (location < 0 || location >= size) {
+        cout << "Error: Location in not available\n";
+        return 0;
     }
+        swap(array[location], array[size - 1]);
+        size--;
+        return 1;
 }
 
 //Info Printing
@@ -183,10 +187,12 @@ double  totalValue(ComicBook array[], int size) {
     cout << "The value of all the comics: $" << sum << endl;
 }
 
-const int MAX_SIZE = 10;
+
 int main() {
+    int size;
+    cin >> size;
     ComicBook* comics = nullptr;
-    comics = new ComicBook [MAX_SIZE];
+    comics = new ComicBook [size];
     loadFile(comics, "comicBooks.txt", MAX_SIZE);
 
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
@@ -194,7 +200,9 @@ int main() {
     //searchComicName(comicList, "Spawn", MAX_SIZE);
     //sortHighestValue(comicList, MAX_SIZE);
     //searchPriceRange(comicList, 100, 200, MAX_SIZE);
-    //printComics(comicList, MAX_SIZE);
+
+    removeComic(comics, 3 - 1, size);
+    printComics(comicList, size);
 
 
     return 0;
