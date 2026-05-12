@@ -169,6 +169,10 @@ bool removeComic(ComicBook array[], int location, int& size) {
         return 1;
 }
 
+//Adds a comic if the array isn't already filled up
+bool addComic(ComicBook array[], int maxSize, int& size) {
+
+}
 //Info Printing
 //Prints out the list of Comics
 void printComics (ComicBook array[], int size) {
