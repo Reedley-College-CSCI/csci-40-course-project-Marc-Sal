@@ -210,6 +210,7 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     array[size - 1].value = value;
     return 1;
 }
+
 //Info Printing
 //Prints out the list of Comics
 void printComics (ComicBook array[], int size) {
@@ -229,6 +230,11 @@ double  totalValue(ComicBook array[], int size) {
     cout << "The value of all the comics: $" << sum << endl;
 }
 
+//Exports data into a new file
+bool exportFile(ComicBook array[], int size) {
+    //Export File
+    ofS
+}
 
 int main() {
     int size;
@@ -247,7 +253,7 @@ int main() {
 
     removeComic(comics, 3 - 1, size);
     addComic(comics, maxSize, size);
-    printComics(comicList, size);
+    //printComics(comicList, size);
 
     return 0;
 }
