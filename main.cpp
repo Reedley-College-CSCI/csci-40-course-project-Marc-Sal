@@ -337,6 +337,17 @@ int main() {
                 break;
             }
             break;
+        //Info Prining Cases
+        case 'P':
+            printComics(comics, size);
+            break;
+        case 'X':
+            exportFile(comics, size);
+            break;
+        default:
+            cout << "Invalid input. Please make the entry is Capatalized\n";
+            break;
+        }
         }
     }
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
