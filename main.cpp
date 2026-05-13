@@ -366,7 +366,8 @@ int main() {
             cout << "Invalid input. Please make the entry is Capatalized\n";
             break;
         }
-        }
+        cout << "Would you like to countinue editing the infomarmation? Enter any non negative number to do so.\n";
+        cin >> check;
     }
     
     return 0;
