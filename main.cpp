@@ -16,7 +16,6 @@ sales along as helping customers find specific comics or ones in a general
 area such as price range or publishing company.
 */
 
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -253,22 +252,31 @@ bool exportFile(ComicBook array[], int size) {
 }
 
 int main() {
+    //Variables
     int size;
     int maxSize;
+    int check;
+    string fileName;
+    ComicBook* comics = nullptr;
+
+    //Set up for main program
+    cout << "What is the name of the file being used?\n";
+    cin >> fileName;
+    cout << "How many comics are in the file\n";
     cin >> size;
     maxSize = size;
-    ComicBook* comics = nullptr;
     comics = new ComicBook [size];
-    loadFile(comics, "comicBooks.txt", MAX_SIZE);
-
+    loadFile(comics, fileName, size);
+    cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
+    cin >> check;
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
     //searchPublisher(comicList, "DC", MAX_SIZE);
     //searchComicName(comicList, "Spawn", MAX_SIZE);
     //sortHighestValue(comicList, MAX_SIZE);
     //searchPriceRange(comicList, 100, 200, MAX_SIZE);
 
-    removeComic(comics, 3 - 1, size);
-    addComic(comics, maxSize, size);
+    //removeComic(comics, 3 - 1, size);
+    //addComic(comics, maxSize, size);
     //printComics(comicList, size);
 
     return 0;
