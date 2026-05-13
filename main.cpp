@@ -256,6 +256,8 @@ int main() {
     int size;
     int maxSize;
     int check;
+    char choice;
+    char choice2;
     string fileName;
     ComicBook* comics = nullptr;
 
@@ -269,6 +271,36 @@ int main() {
     loadFile(comics, fileName, size);
     cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
     cin >> check;
+
+    while (check > -1) {
+        cout << "What would you like to do?\n Enter S to sort the data\n Enter F to find certain comics\n ";
+        cout << "Enter E to edit the data\n Enter V to find the total value\n Enter P to print the info\n ";
+        cout << "Enter X to export the data into a new file\n";
+        cin >> choice;
+        switch (choice) {
+        //Sort Cases
+        case 'S':
+            cout << "How would you like to sort the info?\n Enter H to sort by highest to lowest value\n ";
+            cout << "Enter L to sort by lowest to highest value\n Enter A to sort alphabectically\n ";
+            cin >> choice2;
+            switch (choice2) {
+            case 'H':
+                sortHighestValue(comics, size);
+                break;
+            case 'L':
+                sortLowestValue(comics, size);
+                break;
+            case 'A':
+                sortName(comics, size);
+                break;
+            default:
+                cout << "Invalid input\n";
+                break;
+            }
+            break;
+        //Search Cases
+        }
+    }
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
     //searchPublisher(comicList, "DC", MAX_SIZE);
     //searchComicName(comicList, "Spawn", MAX_SIZE);
