@@ -256,9 +256,14 @@ int main() {
     int size;
     int maxSize;
     int check;
+    double maxPrice = 0.0;
+    double minPrice = 0.0;
     char choice;
     char choice2;
     string fileName;
+    string authorName;
+    string comicName;
+    string publisherName;
     ComicBook* comics = nullptr;
 
     //Set up for main program
@@ -294,11 +299,44 @@ int main() {
                 sortName(comics, size);
                 break;
             default:
-                cout << "Invalid input\n";
+                cout << "Invalid input. Please make sure the entry is capitalized\n";
                 break;
             }
             break;
         //Search Cases
+        case 'F':
+            cout << "What would you like to seacrh for?\n Enter R to search by a price range\n ";
+            cout << "Enter A to search by the author\n Enter N to search by the comic's name\n ";
+            cout << "Enter P to search by the publisher\n ";
+            cin >> choice2;
+            switch (choice2) {
+            case 'R':
+                cout << "What is the max price point?\n";
+                cin >> maxPrice;
+                cout << "What is the minimum price point\n";
+                cin >> minPrice;
+                searchPriceRange(comics, minPrice, maxPrice, size);
+                break;
+            case 'A':
+                cout << "Which author do you want to search for?\n";
+                getline(cin, authorName);
+                searchAuthor(comics, authorName, size);
+                break;
+            case 'N':
+                cout << "Which comic do you want to search for?\n";
+                getline(cin, comicName);
+                searchComicName(comics, authorName, size);
+                break;
+            case 'P':
+                cout << "Which publisher do you want to search for?\n";
+                getline(cin, publisherName);
+                searchPublisher(comics, publisherName, size);
+                break;
+            default:
+                cout << "Invalid input. Please make the entry is Capatalized\n";
+                break;
+            }
+            break;
         }
     }
     //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
