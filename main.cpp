@@ -337,6 +337,24 @@ int main() {
                 break;
             }
             break;
+        case 'E':
+            cout << "How would you like to edit the data?\n Enter R to remove a comic\n ";
+            cout << "Enter A to add a comic\n";
+            cin >> choice2;
+            switch (choice2) {
+            case 'R':
+                printComics(comics, size);
+                cout << "Which comic would you like to remove\n";
+                cin >> remove;
+                removeComic(comics, remove - 1, size);
+                break;
+            case 'A':
+                addComic(comics, maxSize, size);
+                break;
+            default:
+                cout << "Invalid input. Please make the entry is Capatalized\n";
+                break;
+            }
         //Info Prining Cases
         case 'P':
             printComics(comics, size);
@@ -350,15 +368,6 @@ int main() {
         }
         }
     }
-    //cout << "Total Value: " << totalValue(comicList, MAX_SIZE) << endl;
-    //searchPublisher(comicList, "DC", MAX_SIZE);
-    //searchComicName(comicList, "Spawn", MAX_SIZE);
-    //sortHighestValue(comicList, MAX_SIZE);
-    //searchPriceRange(comicList, 100, 200, MAX_SIZE);
-
-    //removeComic(comics, 3 - 1, size);
-    //addComic(comics, maxSize, size);
-    //printComics(comicList, size);
-
+    
     return 0;
 }
