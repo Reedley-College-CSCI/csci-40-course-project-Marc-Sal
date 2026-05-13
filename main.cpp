@@ -369,6 +369,12 @@ int main() {
         cout << "Would you like to countinue editing the infomarmation? Enter any non negative number to do so.\n";
         cin >> check;
     }
-    
+    //Make sure the user wants to keep the data instead of losing it
+    cout << "Do you want to export the data into another file before exiting the program? Enter Y for yes or any other letter for no.\n";
+    cin >> choice;
+    if (choice == 'Y' || choice == 'y') {
+        exportFile(comics, size);
+    }
+    cout << "Thank you for using this program\n";
     return 0;
 }
