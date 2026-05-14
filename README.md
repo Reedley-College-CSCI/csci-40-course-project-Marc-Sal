@@ -47,54 +47,54 @@ to use structs as it wsas easier to use and I had more experience with it.
 // TC-03      |Invalid Menu     |cin >> choice2        |Should print "Invalid|Printed "Invalid input.|Pass      |
 //            |option			|                      |input. Please make   |Please make entry is   |          |
 //            |                 |                      |entry is capitalized"|capatalized"           |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-04      |Author doesn't   |searchAuthor(comics,  |Should print nothing |Printed nothing        |Pass      |
 //            |exist            |"nobody", size);      |                     |                       |          |
 //            |                 |                      |                     |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-05      |Comic doesn't    |searchComicName(      |Should print nothing |Printed nothing        |Pass      |
 //            |exist            |comics, "nobody", size|                     |                       |          |
 //            |                 |);                    |                     |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-06      |Publisher doesn't|searchPublisher(      |Should print nothing |Printed nothing        |Pass      |
 //            |exist            |comics, "nobody", size|                     |                       |          |
 //            |                 |);                    |                     |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-07      |Nothing in price |searchPublisher(      |Should print nothing |Printed nothing        |Pass      |
 //            |range exists     |comics, 10000, 20000, |                     |                       |          |
 //            |                 |size);                |                     |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-08      |Incorrect data   |cin >> check;         |Should handle the    |Repeats the prompt     |Fail      |
 //            |type input       |Incorrect data type   |entry with out       |infinitely             |          |
 //            |                 |entry for check       |crashing             |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-09      |Incorrect data   |cin >> size;          |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
 //            |                 |entry for size        |crashing and prompt  |                       |          |
 //            |                 |                      |the user again       |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-10      |Incorrect data   |cin >> maxPrice;      |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
 //            |                 |entry for maxPrice    |crashing and prompt  |                       |          |
 //            |                 |                      | the user again      |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-11      |Incorrect data   |cin >> minPrice;      |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
 //            |                 |entry for minPrice    |crashing and prompt  |                       |          |
 //            |                 |                      |the user again       |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 // TC-12      |negative number  |cin >> size;          |Should handle the    |Crashes                |Fail      |
 //            |for size         |size < 0              |entry with out       |                       |          |
 //            |                 |                      |crashing and prompt  |                       |          |
 //            |                 |                      |the user again       |                       |          |
 //            |                 |                      |                     |                       |          |
-//__________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________
 
 
 
@@ -103,16 +103,40 @@ to use structs as it wsas easier to use and I had more experience with it.
 
 ## 4. Technical Walkthrough
 - Explain the main functionality of your program.  
+The main functionality of the program is to allow the user to sort, serach, and edit what they have stored in their comic
+collection. The program will take in a file that the user choosed to be edited. They can sort their comics by its price or 
+alphabetically. They can search through their list of comics to find specific comics, authors, publisers, a price range.
+The program will let them remove comic or add one to the list. The user can also use it to find the total value of their 
+comic. They can export the changes into a seperate file that way they can keep all the changes made and have a file that 
+is ready for the next time they want to use the program.
 - **Include a link to your required video demonstration** showcasing how the project works (**3-7 minutes**). 
     Make sure it shareable without approval needed.
+https://youtu.be/pR7r5IXExJg
 
 ---
 
 ## 5. Challenges and Lessons Learned
 - What challenges did you encounter while working on this project?  
-- What key lessons did you learn about programming and problem-solving?  
+Some challenges that I encountered wwas that I couldn't run the program. Since I didn't open the repository as a program
+I couldn't run the program so what I had to do was run the program in a seperate project to make sure thats all was working 
+well. I had issues trying get the user to enter their own comics. I at first just used regular arrays but that became problem
+for when the array needed to be edited and the user needed to enter the array length. I decided to use a pointer to serve as 
+the array so the user can tell the program how many comics are in the file they are using. the removeComic() function gave me
+a hard time as I was over complicating it by trying to reallocate memory when an easir was was to just move the value to the
+last spot in the array and to ignore it when it ca,e to prinint or editing th information.
+- What key lessons did you learn about programming and problem-solving?
+I learned how to use pointer. I wasn't very intrested in them at the start but using them in this program showed me how 
+important they can be for a program. I also leanred of more functions that I could use such as ignore() and its prameterized 
+versions along win clear(). These 2 were very important when it came to getting user inputs without messing up the other inputs.
+I also learned how to make make sure the program doesn't crash when the user inputs the wrong value type. These lessons really 
+helped me expand upon what I can do when make prgrams.
 
 ---
 
 ## 6. Future Improvements
 - If you had more time, what changes or enhancements would you make?  
+If I ahd more time I would have tried to add in a graded feature. Since there has been a rise in people not want to read but
+instead keep the books in a sealed case this could've been a decent addition to the variables in the struct. I also could've
+added in a changeValue() function just in case the value of a comic were to change. I also wished i could've made the addComic()
+function work a lot better by having the size of the pointer increase whne call in the function as this would allow the user to 
+implement and unlimited amount of comics.
