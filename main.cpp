@@ -295,9 +295,15 @@ int main() {
     cout << "What is the name of the file being used?\n";
     cin >> fileName;
     cout << "How many comics are in the file\n";
-    cin >> size;
+    while (!(cin >> size)) {
+        cin.clear();
+        cin.ignore(100, '\n');
+        cout << "Please enter a valid input\n";
+    }
     maxSize = size + 10;
     comics = new ComicBook [maxSize];
+
+    //Checks to see if user enters a valid file
     while (loadFile(comics, fileName, size) < 0) {
         cout << "Please enter the file name.txt\n";
         cin.ignore();
@@ -305,7 +311,12 @@ int main() {
     }
 
     cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
-    cin >> check;
+    //Checks to see if user entered a number
+    while (!(cin >> check)) {
+        cin.clear();
+        cin.ignore(100, '\n');
+        cout << "Please enter a valid input\n";
+    }
 
     while (check > -1) {
         cout << "What would you like to do?\n Enter S to sort the data\n Enter F to find certain comics\n ";
@@ -342,9 +353,19 @@ int main() {
             switch (choice2) {
             case 'R':
                 cout << "What is the max price point?\n";
-                cin >> maxPrice;
+                //Checks to see if user put in a number
+                while (!(cin >> maxPrice)) {
+                    cin.clear();
+                    cin.ignore(100, '\n');
+                    cout << "Please enter a valid input\n";
+                }
                 cout << "What is the minimum price point\n";
-                cin >> minPrice;
+                //Checks to see if user put in a number
+                while (!(cin >> minPrice)) {
+                    cin.clear();
+                    cin.ignore(100, '\n');
+                    cout << "Please enter a valid input\n";
+                }
                 searchPriceRange(comics, minPrice, maxPrice, size);
                 break;
             case 'A':
