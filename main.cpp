@@ -47,7 +47,7 @@ int loadFile(ComicBook array[], string fileName,  int size) {
         getline(file, array[count].publisher) &&
         getline(file, array[count].condition) &&
         (file >> array[count].value)) {
-        file.ignore();
+        file.ignore(100, '\n');
         count++;
     }
     file.close();
@@ -209,7 +209,7 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     //Allows for another comic to be entered
     size++;
     //Propmts the user to fulfill what the attributes if the comic
-    cin.ignore();
+    cin.ignore(100, '\n');
     cout << "What is the name of the comic?\n";
     getline(cin, name);
     cout << "What is the issue of the comic?\n";
@@ -370,19 +370,19 @@ int main() {
                 break;
             case 'A':
                 cout << "Which author do you want to search for?\n";
-                cin.ignore();
+                cin.ignore(100, '\n');
                 getline(cin, authorName);
                 searchAuthor(comics, authorName, size);
                 break;
             case 'N':
                 cout << "Which comic do you want to search for?\n";
-                cin.ignore();
+                cin.ignore(100, '\n');
                 getline(cin, comicName);
                 searchComicName(comics, comicName, size);
                 break;
             case 'P':
                 cout << "Which publisher do you want to search for?\n";
-                cin.ignore();
+                cin.ignore(100, '\n');
                 getline(cin, publisherName);
                 searchPublisher(comics, publisherName, size);
                 break;
