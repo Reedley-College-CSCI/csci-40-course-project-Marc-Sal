@@ -35,11 +35,11 @@ to use structs as it wsas easier to use and I had more experience with it.
 - **Structured Testing Log:** Include a table with test cases, expected output, actual output, and pass/fail status.  
 - What testing methods did you use?  
 - Provide examples of test inputs (valid and invalid) and describe how your program responds.  
-// TestCase ID|	 Description	| Expected Output	   | Expected Output	| Actual Output		| Pass/Fail|
-// TC-01      |Invalid Data Type|cin >> *one >> *two   |Should reject input |Did not reprompt	|Fail	   |
-//            |(User enters a   |>> *three; with       |and prompt again    |					|		   |
-//            |a string when an	|invalid input handling|					|					|		   |
-//            |int is expected) |                      |                    |                   |          |
+// TestCase ID|	 Description	| Input Code Snippet   | Expected Output	 | Actual Output		| Pass/Fail|
+// TC-01      |File doesn't     |loadFile(comics, z,   |Should print         |"Unable to load file"	|Fail	   |
+//            |exist            |size);                |"Unable to load file"| but did not reprompt	|		   |
+//            |                 |                      |and prompt again	 |					    |		   |
+//            |                 |                      |                     |                      |          |
 // __________________________________________________________________________________________________________
 // TC-02      | Out of bounds   |Accessing an invalid  |Should prevent or   |Causes the interger|Fail      |
 //            | array			|index of char         |handle gracefully   |entry later on to  |          |

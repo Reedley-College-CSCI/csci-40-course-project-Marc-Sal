@@ -250,7 +250,7 @@ bool exportFile(ComicBook array[], int size) {
         outFile << array[i].condition << endl;
         outFile << array[i].value << endl;
     }
-    cout << "Data has been exported into \"Upadated Comics List.txt\"\n";
+    cout << "Data has been exported into \"Updated Comics List.txt\"\n";
     outFile.close();
     return 1;
 }
@@ -330,7 +330,7 @@ int main() {
                 break;
             case 'N':
                 cout << "Which comic do you want to search for?\n";
-                cin.ignore()
+                cin.ignore();
                 getline(cin, comicName);
                 searchComicName(comics, comicName, size);
                 break;
