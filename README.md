@@ -35,20 +35,23 @@ to use structs as it wsas easier to use and I had more experience with it.
 - **Structured Testing Log:** Include a table with test cases, expected output, actual output, and pass/fail status.  
 - What testing methods did you use?  
 - Provide examples of test inputs (valid and invalid) and describe how your program responds.  
-// TestCase ID|	 Description	| Input Code Snippet   | Expected Output	 | Actual Output		| Pass/Fail|
-// TC-01      |File doesn't     |loadFile(comics, z,   |Should print         |"Unable to load file"	|Fail	   |
-//            |exist            |size);                |"Unable to load file"| but did not reprompt	|		   |
-//            |                 |                      |and prompt again	 |					    |		   |
-//            |                 |                      |                     |                      |          |
-// __________________________________________________________________________________________________________
-// TC-02      | Out of bounds   |Accessing an invalid  |Should prevent or   |Causes the interger|Fail      |
-//            | array			|index of char         |handle gracefully   |entry later on to  |          |
-//            |                 |name[MAXNAME}         |                    |be skipped         |          |
+// TestCase ID|	 Description	| Input Code Snippet   | Expected Output	 | Actual Output		 | Pass/Fail|
+// TC-01      |File doesn't     |loadFile(comics, z,   |Should print         |"Unable to load file"	 |Fail	    |
+//            |exist            |size);                |"Unable to load file"| but did not reprompt	 |		    |
+//            |                 |                      |and prompt again	 |					     |		    |           |                 |                      |                     |                       |          |
+// _____________________________________________________________________________________________________________
+// TC-02      |Invalid Menu     |cin >> choice         |Should print "Invalid|Printed "Invalid input.|Pass      |
+//            |option			|                      |input. Please make   |Please make entry is   |          |
+//            |                 |                      |entry is capitalized"|capatalized"           |          |
+// _____________________________________________________________________________________________________________
+// TC-03      |Invalid Menu     |cin >> choice2        |Should print "Invalid|Printed "Invalid input.|Pass      |
+//            |option			|                      |input. Please make   |Please make entry is   |          |
+//            |                 |                      |entry is capitalized"|capatalized"           |          |
 //__________________________________________________________________________________________________________
-// TC-03      |Pointer Edge Case|int* ptr = nullptr;   |Should handle safely|Handled it safely  |Pass      |
-//            |(Dereferencing an|cout << *ptr;         |without crash       |wothout a crash    |          |
-//            |Uninitialized    |                      |                    |                   |          |
-//            |Pointer)         |                      |                    |                   |          |
+// TC-04      |Author doesn't   |searchAuthor(comics,  |Should print nothing |Printed nothing        |Pass      |
+//            |exist            |"nobody", size);      |                     |                       |          |
+//            |                 |                      |                     |                       |          |
+//            |                 |                      |                     |                       |          |
 
 
 
