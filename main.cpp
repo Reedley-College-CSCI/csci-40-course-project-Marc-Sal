@@ -54,7 +54,7 @@ int loadFile(ComicBook array[], string fileName,  int size) {
     return count;
 }
 // Sort Functions
-//Sorts the array  from lowest value to highest.
+//Sorts the array from lowest value to highest.
 void sortLowestValue(ComicBook array[], int size) {
     double lowestVal;
     int lowestLocation;
@@ -74,7 +74,7 @@ void sortLowestValue(ComicBook array[], int size) {
     cout << "Sorted the list from lowest to highest value\n";
 }
 
-//Sorts the array from highes value to lowest.
+//Sorts the array from highest value to lowest.
 void sortHighestValue(ComicBook array[], int size) {
     double highestVal;
     int highestLocation;
@@ -126,7 +126,7 @@ void searchPriceRange(ComicBook array[], double min, double max, int size) {
         }
     }
     if (found == 0) {
-        cout << "No comic within the price range, has been found.\n";
+        cout << "No comic within the price range has been found.\n";
     }
 }
 
@@ -208,7 +208,7 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     }
     //Allows for another comic to be entered
     size++;
-    //Propmts the user to fulfill what the attributes if the comic
+    //Prompts the user to fulfill what the attributes of the comics are
     cin.ignore(100, '\n');
     cout << "What is the name of the comic?\n";
     getline(cin, name);
@@ -310,7 +310,7 @@ int main() {
         cin >> fileName;
     }
 
-    cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
+    cout << "Would you like to edit the information? Enter any non negative number to do so.\n";
     //Checks to see if user entered a number
     while (!(cin >> check)) {
         cin.clear();
@@ -327,7 +327,7 @@ int main() {
         //Sort Cases
         case 'S':
             cout << "How would you like to sort the info?\n Enter H to sort by highest to lowest value\n ";
-            cout << "Enter L to sort by lowest to highest value\n Enter A to sort alphabectically\n ";
+            cout << "Enter L to sort by lowest to highest value\n Enter A to sort alphabetically\n ";
             cin >> choice2;
             switch (choice2) {
             case 'H':
@@ -346,7 +346,7 @@ int main() {
             break;
         //Search Cases
         case 'F':
-            cout << "What would you like to seacrh for?\n Enter R to search by a price range\n ";
+            cout << "What would you like to search for?\n Enter R to search by a price range\n ";
             cout << "Enter A to search by the author\n Enter N to search by the comic's name\n ";
             cout << "Enter P to search by the publisher\n ";
             cin >> choice2;
@@ -387,7 +387,7 @@ int main() {
                 searchPublisher(comics, publisherName, size);
                 break;
             default:
-                cout << "Invalid input. Please make the entry is Capatalized\n";
+                cout << "Invalid input. Please make sure the entry is capitalized\n";
                 break;
             }
             break;
@@ -406,11 +406,11 @@ int main() {
                 addComic(comics, maxSize, size);
                 break;
             default:
-                cout << "Invalid input. Please make the entry is Capatalized\n";
+                cout << "Invalid input. Please make sure the entry is capitalized\n";
                 break;
             }
             break;
-        //Info Prining Cases
+        //Info Printing Cases
         case 'V':
             totalValue(comics, size);
             break;
@@ -421,10 +421,10 @@ int main() {
             exportFile(comics, size);
             break;
         default:
-            cout << "Invalid input. Please make the entry is Capatalized\n";
+            cout << "Invalid input. Please make sure the entry is capitalized\n";
             break;
         }
-        cout << "Would you like to countinue editing the infomarmation? Enter any non negative number to do so.\n";
+        cout << "Would you like to continue editing the information? Enter any non negative number to do so.\n";
         cin >> check;
     }
     //Make sure the user wants to keep the data instead of losing it
@@ -433,6 +433,7 @@ int main() {
     if (choice == 'Y' || choice == 'y') {
         exportFile(comics, size);
     }
+
     cout << "Thank you for using this program\n";
     delete[] comics;
     return 0;
