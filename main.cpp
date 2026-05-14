@@ -221,7 +221,11 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
     cout << "What condition is the comic in?\n";
     getline(cin, condition);
     cout << "What is the value of the comic?\n";
-    cin >> value;
+    while (!(cin >> value)) {
+        cin.clear();
+        cin.ignore(100, '\n');
+        cout << "Please enter a valid input\n";
+    }
 
     //Inputs the attributes into the array
     array[size - 1].name = name;
