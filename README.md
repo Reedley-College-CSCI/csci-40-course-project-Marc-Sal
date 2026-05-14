@@ -38,7 +38,7 @@ to use structs as it wsas easier to use and I had more experience with it.
 // TestCase ID|	 Description	| Input Code Snippet   | Expected Output	 | Actual Output		 | Pass/Fail|
 // TC-01      |File doesn't     |loadFile(comics, z,   |Should print         |"Unable to load file"	 |Fail	    |
 //            |exist            |size);                |"Unable to load file"| but did not reprompt	 |		    |
-//            |                 |                      |and prompt again	 |					     |		    |           |                 |                      |                     |                       |          |
+//            |                 |                      |and prompt again	 |					     |		    |
 // _____________________________________________________________________________________________________________
 // TC-02      |Invalid Menu     |cin >> choice         |Should print "Invalid|Printed "Invalid input.|Pass      |
 //            |option			|                      |input. Please make   |Please make entry is   |          |
@@ -51,6 +51,21 @@ to use structs as it wsas easier to use and I had more experience with it.
 // TC-04      |Author doesn't   |searchAuthor(comics,  |Should print nothing |Printed nothing        |Pass      |
 //            |exist            |"nobody", size);      |                     |                       |          |
 //            |                 |                      |                     |                       |          |
+//            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+// TC-05      |Comic doesn't    |searchComicName(      |Should print nothing |Printed nothing        |Pass      |
+//            |exist            |comics, "nobody", size|                     |                       |          |
+//            |                 |);                    |                     |                       |          |
+//            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+// TC-06      |Publisher doesn't|searchPublisher(      |Should print nothing |Printed nothing        |Pass      |
+//            |exist            |comics, "nobody", size|                     |                       |          |
+//            |                 |);                    |                     |                       |          |
+//            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+// TC-07      |Nothing in price |searchPublisher(      |Should print nothing |Printed nothing        |Pass      |
+//            |range exists     |comics, 10000, 20000, |                     |                       |          |
+//            |                 |size);                |                     |                       |          |
 //            |                 |                      |                     |                       |          |
 
 
