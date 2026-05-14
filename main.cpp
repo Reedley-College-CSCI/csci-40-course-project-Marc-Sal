@@ -278,7 +278,12 @@ int main() {
     cin >> size;
     maxSize = size + 10;
     comics = new ComicBook [maxSize];
-    loadFile(comics, fileName, size);
+    while (loadFile(comics, fileName, size) < 0) {
+        cout << "Please enter the file name.txt\n";
+        cin.ignore();
+        cin >> fileName;
+    }
+
     cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
     cin >> check;
 
