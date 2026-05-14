@@ -71,6 +71,7 @@ void sortLowestValue(ComicBook array[], int size) {
         swap(array[lowestLocation], array[i]);
 
     }
+    cout << "Sorted the list from lowest to highest value\n";
 }
 
 //Sorts the array from highes value to lowest.
@@ -90,6 +91,7 @@ void sortHighestValue(ComicBook array[], int size) {
         swap(array[highestLocation], array[i]);
 
     }
+    cout << "Sorted the list from highest to lowest value\n";
 }
 
 //Sorts the array based on the Comic name ***FINISH THIS ONE****
@@ -108,6 +110,7 @@ void sortName(ComicBook array[], int size) {
         swap(array[highestLocation], array[i]);
 
     }
+    cout << "Sorted the list alphabetically\n";
 }
 
 //Sort Functions
@@ -247,6 +250,7 @@ bool exportFile(ComicBook array[], int size) {
         outFile << array[i].condition << endl;
         outFile << array[i].value << endl;
     }
+    cout << "Data has been exported into \"Upadated Comics List.txt\"\n";
     outFile.close();
     return 1;
 }
@@ -260,6 +264,7 @@ int main() {
     double minPrice = 0.0;
     char choice;
     char choice2;
+    int remove;
     string fileName;
     string authorName;
     string comicName;
