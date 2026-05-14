@@ -67,6 +67,11 @@ to use structs as it wsas easier to use and I had more experience with it.
 //            |range exists     |comics, 10000, 20000, |                     |                       |          |
 //            |                 |size);                |                     |                       |          |
 //            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+// TC-08      |Incorrect data   |cin >> check;         |Should handle the    |Repeats the prompt     |Fail      |
+//            |type input       |Incorrect data type   |entry with out       |infinitely             |          |
+//            |                 |entry for check       |crashing             |                       |          |
+//            |                 |                      |                     |                       |          |
 
 
 
