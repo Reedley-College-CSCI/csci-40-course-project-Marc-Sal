@@ -116,45 +116,65 @@ void sortName(ComicBook array[], int size) {
 //Sort Functions
 //Searches for comics in a price range
 void searchPriceRange(ComicBook array[], double min, double max, int size) {
+    int found = 0;
     for (int i = 0; i < size; i++) {
         if (array[i].value <= max && array[i].value >= min) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 <<" Publisher: " << array[i].publisher << "  Condition: " << array[i].condition 
                 << " Value: " << array[i].value << endl;
         }
+        found++;
+    }
+    if (found == 0) {
+        cout << "No comic within the price range, has been found.\n";
     }
 }
 
 //Searches based on publisher
 void searchAuthor (ComicBook array[], string author, int size) {
+    int found = 0;
     for (int i = 0; i < size; i++) {
         if (array[i].author == author) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
                 << " Value: " << array[i].value << endl;
+            found++;
         }
+    }
+    if (found == 0) {
+        cout << "No comic with the author, " << author << " has been found.\n";
     }
 }
 
 //Searches for specific comics
 void searchComicName(ComicBook array[], string comicName, int size) {
+    int found = 0;
     for (int i = 0; i < size; i++) {
         if (array[i].name == comicName) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
                 << " Value: " << array[i].value << endl;
+            found++;
         }
+    }
+    if (found == 0) {
+        cout << "No comic with the name, " << comicName << " has been found.\n";
     }
 }
 
 //Searches for specific publisher
 void searchPublisher(ComicBook array[], string publisher, int size) {
+    int found = 0;
     for (int i = 0; i < size; i++) {
         if (array[i].publisher == publisher) {
             cout <<  i + 1 << " Name: "  << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 << " Publisher: " << array[i].publisher << "  Condition: " << array[i].condition
                 << " Value: " << array[i].value << endl;
+            found++;
         }
+    }
+    if (found == 0) {
+        cout << "No comic with the publisher, " << publisher << " has been found.\n";
     }
 }
 
