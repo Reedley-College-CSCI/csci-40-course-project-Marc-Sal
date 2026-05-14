@@ -38,7 +38,7 @@ int loadFile(ComicBook array[], string fileName,  int size) {
 
     if (!file) {
         cout << "Unable to open file\n";
-        return 0;
+        return -1;
     }
     int count = 0;
     while (count < size && getline(file, array[count].name)
@@ -113,7 +113,7 @@ void sortName(ComicBook array[], int size) {
     cout << "Sorted the list alphabetically\n";
 }
 
-//Sort Functions
+//Search Functions
 //Searches for comics in a price range
 void searchPriceRange(ComicBook array[], double min, double max, int size) {
     int found = 0;
@@ -122,8 +122,8 @@ void searchPriceRange(ComicBook array[], double min, double max, int size) {
             cout << i + 1 << " Name: " << array[i].name << " " << array[i].issue << " Author: " << array[i].author
                 <<" Publisher: " << array[i].publisher << "  Condition: " << array[i].condition 
                 << " Value: " << array[i].value << endl;
+            found++;
         }
-        found++;
     }
     if (found == 0) {
         cout << "No comic within the price range, has been found.\n";
@@ -295,7 +295,7 @@ int main() {
     cout << "What is the name of the file being used?\n";
     cin >> fileName;
     cout << "How many comics are in the file\n";
-    while (!(cin >> size)) {
+    while (!(cin >> size) || size <= 0) {
         cin.clear();
         cin.ignore(100, '\n');
         cout << "Please enter a valid input\n";
@@ -411,6 +411,9 @@ int main() {
             }
             break;
         //Info Prining Cases
+        case 'V':
+            totalValue(comics, size);
+            break;
         case 'P':
             printComics(comics, size);
             break;

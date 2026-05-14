@@ -75,19 +75,27 @@ to use structs as it wsas easier to use and I had more experience with it.
 //__________________________________________________________________________________________________________
 // TC-09      |Incorrect data   |cin >> size;          |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
-//            |                 |entry for check       |crashing and prompt  |                       |          |
+//            |                 |entry for size        |crashing and prompt  |                       |          |
 //            |                 |                      |the user again       |                       |          |
 //__________________________________________________________________________________________________________
 // TC-10      |Incorrect data   |cin >> maxPrice;      |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
-//            |                 |entry for check       |crashing and prompt  |                       |          |
+//            |                 |entry for maxPrice    |crashing and prompt  |                       |          |
 //            |                 |                      | the user again      |                       |          |
 //__________________________________________________________________________________________________________
 // TC-11      |Incorrect data   |cin >> minPrice;      |Should handle the    |Doesn't crash and      |Pass      |
 //            |type input       |Incorrect data type   |entry with out       |prompts the user again |          |
-//            |                 |entry for check       |crashing and prompt  |                       |          |
-//            |                 |entry for check       |the user again       |                       |          |
+//            |                 |entry for minPrice    |crashing and prompt  |                       |          |
+//            |                 |                      |the user again       |                       |          |
 //            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+// TC-12      |negative number  |cin >> size;          |Should handle the    |Crashes                |Fail      |
+//            |for size         |size < 0              |entry with out       |                       |          |
+//            |                 |                      |crashing and prompt  |                       |          |
+//            |                 |                      |the user again       |                       |          |
+//            |                 |                      |                     |                       |          |
+//__________________________________________________________________________________________________________
+
 
 
 
