@@ -183,7 +183,7 @@ bool addComic(ComicBook array[], int maxSize, int& size) {
 
     //Checks to see if the array is already filled up
     if (maxSize == size) {
-        cout "Error: List is already filled up\n";
+        cout << "Error: List is already filled up\n";
         return 0;
     }
     //Allows for another comic to be entered
@@ -224,7 +224,7 @@ void printComics (ComicBook array[], int size) {
 }
 
 //Print the Value of all comics
-double  totalValue(ComicBook array[], int size) {
+void  totalValue(ComicBook array[], int size) {
     double sum = 0.0;
     for (int i = 0; i < size; i++) {
         sum += array[i].value;
@@ -276,8 +276,8 @@ int main() {
     cin >> fileName;
     cout << "How many comics are in the file\n";
     cin >> size;
-    maxSize = size;
-    comics = new ComicBook [size];
+    maxSize = size + 10;
+    comics = new ComicBook [maxSize];
     loadFile(comics, fileName, size);
     cout << "Would you like to edit the infomarmation? Enter any non negative number to do so.\n";
     cin >> check;
@@ -324,16 +324,19 @@ int main() {
                 break;
             case 'A':
                 cout << "Which author do you want to search for?\n";
+                cin.ignore();
                 getline(cin, authorName);
                 searchAuthor(comics, authorName, size);
                 break;
             case 'N':
                 cout << "Which comic do you want to search for?\n";
+                cin.ignore()
                 getline(cin, comicName);
-                searchComicName(comics, authorName, size);
+                searchComicName(comics, comicName, size);
                 break;
             case 'P':
                 cout << "Which publisher do you want to search for?\n";
+                cin.ignore();
                 getline(cin, publisherName);
                 searchPublisher(comics, publisherName, size);
                 break;
@@ -360,6 +363,7 @@ int main() {
                 cout << "Invalid input. Please make the entry is Capatalized\n";
                 break;
             }
+            break;
         //Info Prining Cases
         case 'P':
             printComics(comics, size);
@@ -381,5 +385,6 @@ int main() {
         exportFile(comics, size);
     }
     cout << "Thank you for using this program\n";
+    delete[] comics;
     return 0;
 }
